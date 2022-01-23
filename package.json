@@ -1,0 +1,62 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:js": "npm run check-types && next lint",
+    "lint:style": "stylelint '**/*.scss' --ignore-path .gitignore",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:fix:js": "next lint --fix",
+    "lint:fix:style": "stylelint --fix '**/*.scss' --ignore-path .gitignore",
+    "lint:fix": "npm run lint:fix:js && npm run lint:fix:style",
+    "format:js": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx}'",
+    "format:style": "prettier --write --ignore-path .gitignore './**/*.scss'",
+    "format": "npm run format:js && npm run format:style",
+    "check-types": "tsc --project ./tsconfig.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.scss": [
+      "bash -c 'npm run format:style && npm run lint:fix:style'",
+      "bash -c 'npm run lint:style'"
+    ],
+    "./**/*.{js,jsx,ts,tsx}": [
+      "bash -c 'npm run format:js && npm run lint:fix:js'",
+      "bash -c 'npm run lint:js'"
+    ]
+  },
+  "dependencies": {
+    "@react-three/drei": "^8.6.3",
+    "@react-three/fiber": "^7.0.25",
+    "@types/three": "^0.136.1",
+    "next": "12.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "three": "^0.136.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.10",
+    "@types/react": "17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.24.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "sass": "^1.37.5",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^4.0.0",
+    "typescript": "4.5.5"
+  }
+}
