@@ -62,3 +62,8 @@ textarea {
 :where([draggable="true"]) {
   -webkit-user-drag: element;
 }
+
+html,
+body {
+  overflow: hidden;
+}
