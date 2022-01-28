@@ -1,5 +1,6 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Text } from '@react-three/drei'
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { NextPage } from 'next'
 import { Perf } from 'r3f-perf'
@@ -12,8 +13,8 @@ const MouseMoveCamera = () => {
   const vec = new THREE.Vector3()
   return useFrame(() =>
     camera.position.lerp(
-      vec.set(mouse.x * 2, mouse.y * 1, camera.position.z),
-      0.01
+      vec.set(mouse.x / 2, mouse.y / 2, camera.position.z),
+      0.1
     )
   )
 }
@@ -24,11 +25,14 @@ const Scroll: NextPage = () => {
       <ParallaxLayer offset={0}>
         <Canvas
           orthographic
+          mode="concurrent"
           gl={{ alpha: false }}
           camera={{ zoom: 120, position: [0, 0, 100] }}
         >
           <Perf />
           <color attach="background" args={[0x000000]} />
+          <AdaptiveDpr pixelated />
+          <AdaptiveEvents />
           <Light />
           <Text
             position={[0, 0, 5]}
@@ -40,7 +44,6 @@ const Scroll: NextPage = () => {
             TEAM LAN
           </Text>
           <FirstVisual />
-          <MouseMoveCamera />
           <MouseMoveCamera />
         </Canvas>
       </ParallaxLayer>
