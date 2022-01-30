@@ -1,7 +1,11 @@
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import Head from 'next/head'
+import { Perf } from 'r3f-perf'
 import type { NextPage } from 'next'
+import Composition from '@/components/Composition'
 import HamburgerMenu from '@/components/HamburgerMenu'
-import Scroll from '@/components/Scroll'
+import styles from '@/styles/Home.module.scss'
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +17,21 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <HamburgerMenu />
-        <Scroll />
+        <div className={styles.canvas}>
+          <Canvas
+            orthographic
+            mode="concurrent"
+            gl={{ alpha: false }}
+            camera={{ zoom: 120, position: [0, 0, 100] }}
+          >
+            <color attach="background" args={[0x000000]} />
+            <Perf />
+            <AdaptiveDpr pixelated />
+            <AdaptiveEvents />
+            <Composition />
+          </Canvas>
+          <HamburgerMenu />
+        </div>
       </main>
     </>
   )

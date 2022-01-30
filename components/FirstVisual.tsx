@@ -1,3 +1,4 @@
+import { Text } from '@react-three/drei'
 import { NextPage } from 'next'
 import * as THREE from 'three'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
@@ -21,6 +22,15 @@ const FirstVisual: NextPage = () => {
           </mesh>
         )
       })}
+      <Text
+        position={[0, 0, 10]}
+        fontSize={1.5}
+        font={'Bungee_Hairline/BungeeHairline-Regular.ttf'}
+        anchorX="center"
+        anchorY="middle"
+      >
+        TEAM LAN
+      </Text>
     </>
   )
 }
