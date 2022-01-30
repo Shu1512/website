@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
+import HamburgerMenu from '@/components/HamburgerMenu'
 import Scroll from '@/components/Scroll'
 
 const Home: NextPage = () => {
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <HamburgerMenu />
         <Scroll />
       </main>
     </>
