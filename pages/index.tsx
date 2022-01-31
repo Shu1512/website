@@ -30,6 +30,12 @@ const Home: NextPage = () => {
             <AdaptiveEvents />
             <Composition />
           </Canvas>
+          <div className={styles.scroll}>
+            <a href="#">
+              <p>TO THE NEXT</p>
+              <span></span>
+            </a>
+          </div>
           <HamburgerMenu />
         </div>
       </main>
