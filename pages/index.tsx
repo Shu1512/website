@@ -24,7 +24,7 @@ const Home: NextPage = () => {
             gl={{ alpha: false }}
             camera={{ zoom: 120, position: [0, 0, 100] }}
           >
-            <color attach="background" args={[0x000000]} />
+            <color attach="background" args={[0x111]} />
             <Perf />
             <AdaptiveDpr pixelated />
             <AdaptiveEvents />

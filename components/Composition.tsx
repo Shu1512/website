@@ -1,11 +1,10 @@
 import { ScrollControls, Scroll } from '@react-three/drei'
 import { useThree, useFrame } from '@react-three/fiber'
-import { NextPage } from 'next'
 import * as THREE from 'three'
 import FirstVisual from '@/components/FirstVisual'
 import Light from '@/components/Light'
 
-const MouseMoveCamera = () => {
+const MouseMoveCamera: React.VFC = () => {
   const { camera, mouse } = useThree()
   const vec = new THREE.Vector3()
   return useFrame(() =>
@@ -16,17 +15,15 @@ const MouseMoveCamera = () => {
   )
 }
 
-const Composition: NextPage = () => {
+const Composition: React.VFC = () => {
   return (
-    <>
-      <ScrollControls pages={4}>
-        <Scroll>
-          <Light />
-          <FirstVisual />
-          <MouseMoveCamera />
-        </Scroll>
-      </ScrollControls>
-    </>
+    <ScrollControls pages={4}>
+      <Scroll>
+        <Light />
+        <FirstVisual />
+        <MouseMoveCamera />
+      </Scroll>
+    </ScrollControls>
   )
 }
 

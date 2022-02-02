@@ -1,12 +1,11 @@
 import { Text } from '@react-three/drei'
-import { NextPage } from 'next'
 import * as THREE from 'three'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import Models from '@/components/Models'
 
 const loader = new TextureLoader()
 
-const FirstVisual: NextPage = () => {
+const FirstVisual: React.VFC = () => {
   return (
     <>
       {Models.map((model, i) => {
@@ -25,7 +24,7 @@ const FirstVisual: NextPage = () => {
       <Text
         position={[0, 0, 10]}
         fontSize={1.5}
-        font={'Bungee_Hairline/BungeeHairline-Regular.ttf'}
+        font={'fonts/bungee_hairline/BungeeHairline-Regular.ttf'}
         anchorX="center"
         anchorY="middle"
       >

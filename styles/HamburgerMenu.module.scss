@@ -2,7 +2,7 @@
   nav {
     display: block;
     position: fixed;
-    background-color: #f1907e;
+    background-color: $pink;
     width: 45rem;
     height: 30rem;
     right: -45rem;
@@ -16,22 +16,16 @@
   &_nav {
     margin-top: 12rem;
     margin-left: 11rem;
-    ul {
-      list-style: none;
+    li {
       margin: 0;
-      padding: 0;
-      li {
-        margin: 0;
-        a {
-          display: block;
-          color: #fff;
-          font-size: 2rem;
-          padding: 1rem;
-          text-decoration: none;
-          transition-duration: 0.2s;
-          &:hover {
-            color: #e4e4e4;
-          }
+      a {
+        display: block;
+        color: $white;
+        font-size: 2rem;
+        padding: 1rem;
+        transition-duration: 0.2s;
+        &:hover {
+          color: $hover-white;
         }
       }
     }
@@ -52,7 +46,7 @@
       left: 0;
       width: 30px;
       height: 2px;
-      background-color: #fff;
+      background-color: $white;
       transition: all 0.5s;
       border-radius: 4px;
       &:nth-child(1) {

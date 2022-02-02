@@ -1,8 +1,7 @@
-import { NextPage } from 'next'
 import { useState } from 'react'
 import styles from '@/styles/HamburgerMenu.module.scss'
 
-const HamburgerMenu: NextPage = () => {
+const HamburgerMenu: React.VFC = () => {
   const [toggleBtn, setToggleBtn] = useState(false)
   return (
     <div className={`${styles.hamburger} ${toggleBtn ? styles.open : ''}`}>

@@ -1,4 +1,4 @@
-const Light = () => {
+const Light: React.VFC = () => {
   return (
     <>
       <ambientLight color={0x444444} />
